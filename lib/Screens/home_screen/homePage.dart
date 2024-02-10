@@ -117,13 +117,53 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text(
-          "Hello world!!",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/quiz-logo.png',
+              color: kSecondaryColor,
+              width: 300,
+            ),
+            const SizedBox(
+              height: 65,
+            ),
+            Text(
+              "Learn Flutter the fun Way",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey.shade800,
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            // TextButton.icon(
+            //   onPressed: () {},
+            //   icon: Icon(Icons.arrow_forward),
+            //   label: Text("Let's get started"),
+            // ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue, // Set the background color of the button
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(10), // Set the button border radius
+                ),
+              ),
+              child: Text(
+                'Get Started',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: Padding(
@@ -165,18 +205,23 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => HomePage(),
                     ),
                   );
                 } else if (_activepos == 1) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => HomeScreen(),
                     ),
                   );
                 } else {
-                  print("hello ....");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutMe(),
+                    ),
+                  );
                 }
               });
             },

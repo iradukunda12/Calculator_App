@@ -164,18 +164,23 @@ class _AboutMeState extends State<AboutMe> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => HomePage(),
                     ),
                   );
                 } else if (_activepos == 1) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => HomeScreen(),
                     ),
                   );
                 } else {
-                  print("hello ....");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutMe(),
+                    ),
+                  );
                 }
               });
             },
