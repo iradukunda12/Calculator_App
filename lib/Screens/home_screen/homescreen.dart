@@ -42,8 +42,11 @@
 //   }
 // }
 
+import 'package:calculate/Screens/about.dart';
+import 'package:calculate/Screens/home_screen/homePage.dart';
 import 'package:calculate/Widgets/calculationtext.dart';
 import 'package:calculate/Widgets/calculatorbutton.dart';
+import 'package:calculate/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -128,6 +131,106 @@ class HomeScreen extends StatelessWidget {
     final rows = [row1, row2, row3, row4, row5];
 
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: kPrimaryColor),
+        backgroundColor: kSecondaryColor,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 60.0),
+          child: Text(
+            "Calculator App",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: kPrimaryColor,
+            ),
+          ),
+        ),
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: kSecondaryColor,
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                child: Center(
+                  child: Text(
+                    "L O G O",
+                    style: TextStyle(color: kPrimaryColor, fontSize: 35),
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.home,
+                  color: kPrimaryColor,
+                  size: 29,
+                ),
+                title: const Text(
+                  "Home",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: kPrimaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.calculate,
+                  color: kPrimaryColor,
+                  size: 29,
+                ),
+                title: const Text(
+                  "Calculator App",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: kPrimaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.person,
+                  color: kPrimaryColor,
+                  size: 29,
+                ),
+                title: const Text(
+                  "About ME",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: kPrimaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutMe(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
