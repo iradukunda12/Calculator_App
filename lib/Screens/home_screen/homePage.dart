@@ -10,15 +10,34 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-
 class _HomePageState extends State<HomePage> {
   int _activepos = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("HomePage"),),
-      drawer: Drawer(),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: kPrimaryColor),
+        backgroundColor: kSecondaryColor,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 60.0),
+          child: Text(
+            "HomePage",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: kPrimaryColor,
+            ),
+          ),
+        ),
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: kSecondaryColor,
+          child: ListView(
+            children: [],
+          ),
+        ),
+      ),
       body: const Center(
         child: Text(
           "Hello world!!",

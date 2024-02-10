@@ -1,3 +1,4 @@
+import 'package:calculate/Screens/home_screen/homePage.dart';
 import 'package:calculate/Screens/home_screen/homescreen.dart';
 import 'package:calculate/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
               ),
         ),
       ),
-      home: HomeScreen(),
+      home: HomePage(),
     );
   }
 }
