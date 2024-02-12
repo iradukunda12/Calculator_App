@@ -18,10 +18,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: kPrimaryColor),
+        iconTheme: const IconThemeData(color: kPrimaryColor),
         backgroundColor: kSecondaryColor,
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 60.0),
+        title: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 60.0),
           child: Text(
             "HomePage",
             style: TextStyle(
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => const HomeScreen(),
                     ),
                   );
                 },
@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AboutMe(),
+                      builder: (context) => const AboutMe(),
                     ),
                   );
                 },
@@ -149,13 +149,13 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue, // Set the background color of the button
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 shape: RoundedRectangleBorder(
                   borderRadius:
                       BorderRadius.circular(10), // Set the button border radius
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Get Started',
                 style: TextStyle(
                   fontSize: 18,
@@ -179,7 +179,7 @@ class _HomePageState extends State<HomePage> {
             activeColor: kPrimaryColor,
             tabBackgroundColor: Colors.grey.shade800,
             gap: 8,
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             tabs: const [
               GButton(
                 icon: Icons.home,
@@ -205,21 +205,21 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => const HomePage(),
                     ),
                   );
                 } else if (_activepos == 1) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => const HomeScreen(),
                     ),
                   );
                 } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AboutMe(),
+                      builder: (context) => const AboutMe(),
                     ),
                   );
                 }
